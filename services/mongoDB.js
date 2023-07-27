@@ -13,7 +13,7 @@ export const connectApplicationDb = () => {
     // mongoose.set("useFindAndModify", false);
     mongoose.Promise = global.Promise;
     const db = mongoose.connection;
-    db.on("error", () => logger.error("MongoDB connection error", ""));
+    db.on("error", () => console.error("MongoDB connection error", ""));
     db.once("open", () => {
       console.info("database connected>>?>?");
     });
